@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const LeftSideNav = () => {
+    const [categrouies, setCategrouies] = useState([]);
     return (
         <div>
-            <h2>Left Side Nav</h2>
+            <h4>All Categrouies</h4>
         </div>
     );
 };
