@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
+import { Link } from 'react-router-dom';
 
 
 
@@ -10,7 +11,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary mb-4">
             <Container>
-                <Navbar.Brand className='fs-2 fw-bold text-success' href="#home">BayannorKantho</Navbar.Brand>
+                <Navbar.Brand className='fs-2 fw-bold text-success'><Link to='/'>BayannorKantho</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto fs-5" >

@@ -12,13 +12,13 @@ const Main = () => {
             <Header></Header>
             <Container>
                 <Row>
-                    <Col className='lg-2'>
+                    <Col lg="2">
                         <LeftSideNav></LeftSideNav>
                     </Col>
-                    <Col className='lg-7'>
+                    <Col lg="7" >
                         <Outlet></Outlet>
                     </Col>
-                    <Col className='lg-3'>
+                    <Col lg="3">
                         <RightSideNav></RightSideNav>
                     </Col>
 
