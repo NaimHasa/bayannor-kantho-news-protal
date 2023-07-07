@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import { BsGoogle, BsGithub, BsFacebook, BsYoutube, BsTwitter, BsDiscord, BsWhatsapp } from "react-icons/bs";
 import ListGroup from 'react-bootstrap/ListGroup';
 import BrandPromotion from '../BrandPromotion/BrandPromotion';
+import { authContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const RightSideNav = () => {
+    const { ProviderLogin } = useContext(authContext);
+    const googleProvider = new GoogleAuthProvider();
+    const handleGoogleSignIn = () => {
+        ProviderLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(error => console.error(error));
+    }
     return (
 
         <div className="d-grid gap-1" >
-            <Button variant="primary" >
+            <Button onClick={handleGoogleSignIn} variant="primary" >
                 <BsGoogle></BsGoogle> <strong>LogIn With Google</strong>
             </Button>
             <Button variant="dark">
