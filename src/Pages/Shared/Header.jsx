@@ -5,11 +5,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../contexts/AuthProvider/AuthProvider';
 import { BsFillPersonPlusFill } from 'react-icons/bs';
+import { Image } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 
 
 
 const Header = () => {
-    const { user } = useContext(authContext);
+    const { user, logOut } = useContext(authContext);
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+        // .catch(error => console.error(error))
+    }
     return (
         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary mb-4">
             <Container>
@@ -23,18 +30,36 @@ const Header = () => {
 
                     </Nav>
                     <Nav>
-                        <Nav.Link><h6><strong>{user?.displayName}</strong></h6></Nav.Link>
+                        <Nav.Link>
+                            {
+                                user?.uid
+                                    ?
+                                    <>
+                                        <span>{user?.email}</span>
+                                        <Button onClick={handleLogOut} variant="secondary">Log out</Button>
+
+
+                                    </>
+                                    :
+                                    <>
+                                        <Link to='/login'>Login</Link>
+                                        <Link to='/register'>Register</Link>
+                                    </>
+                            }
+
+
+                        </Nav.Link>
                         <Nav.Link eventKey={2} >
                             {user?.photoURL
                                 ?
-                                <Image
-                                    style={{ height: '50px' }}
+                                <Image className='me-4' style={{ height: '30px' }}
                                     roundedCircle
                                     src={user?.photoURL
                                     }>
                                 </Image>
                                 : <BsFillPersonPlusFill></BsFillPersonPlusFill>
                             }
+
                         </Nav.Link>
 
 
