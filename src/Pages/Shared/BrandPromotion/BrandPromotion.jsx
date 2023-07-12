@@ -1,8 +1,9 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
-import Brand1 from '../../../assets/1.png'
-import Brand2 from '../../../assets/2.png'
-import Brand3 from '../../../assets/3.png'
+import Brand1 from '../../../assets/ads01.png';
+import Brand2 from '../../../assets/ads02.png';
+import Brand3 from '../../../assets/ads03.png';
+
 
 const BrandPromotion = () => {
     return (
