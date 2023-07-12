@@ -30,7 +30,7 @@ const Header = () => {
 
                     </Nav>
                     <Nav>
-                        <Nav.Link>
+                        <>
                             {
                                 user?.uid
                                     ?
@@ -48,7 +48,7 @@ const Header = () => {
                             }
 
 
-                        </Nav.Link>
+                        </>
                         <Nav.Link eventKey={2} >
                             {user?.photoURL
                                 ?

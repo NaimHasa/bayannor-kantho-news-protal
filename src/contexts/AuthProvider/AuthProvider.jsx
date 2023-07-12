@@ -45,7 +45,9 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubcribe = onAuthStateChanged(auth, (currentUser) => {
             // console.log('set inside ', currentUser)
-            setUser(currentUser);
+            if (currentUser === null || currentUser.emailVerified) {
+                setUser(currentUser);
+            }
             setLoading(false);
 
         })
@@ -59,6 +61,7 @@ const AuthProvider = ({ children }) => {
     {
         user,
         loading,
+        setLoading,
         ProviderLogin,
         logOut,
         createUser,

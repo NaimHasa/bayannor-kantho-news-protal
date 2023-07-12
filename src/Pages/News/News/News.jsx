@@ -15,7 +15,7 @@ const News = () => {
                     <h3><strong>{title}</strong></h3>
                 </Card.Title>
                 <Card.Text>
-                    <p>{details}</p>
+                    <>{details}</>
                 </Card.Text>
                 {/* <Button variant="primary">Go somewhere</Button> */}
             </Card.Body>
