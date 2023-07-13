@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 const LeftSideNav = () => {
     const [categrouies, setCategrouies] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/news-categrouies')
+        fetch('https://bayannor-kantho-server-main.vercel.app/news-categrouies')
             .then(res => res.json())
             .then(data => setCategrouies(data))
     }, [])
     return (
-        <div>
+        <div style={{ position: "sticky", top: 0, }}>
             <h4>All Categrouies</h4>
             {
                 categrouies.map(categroy => <p key={categroy.id}>

@@ -7,7 +7,7 @@ const Home = () => {
     return (
         <div>
 
-            <h4>Bayannor Kantho All news: {allNews.length}</h4>
+            {/* <h4>Bayannor Kantho All news: {allNews.length}</h4> */}
 
 
             {

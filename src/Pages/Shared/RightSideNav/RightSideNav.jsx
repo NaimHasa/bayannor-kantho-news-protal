@@ -20,7 +20,7 @@ const RightSideNav = () => {
     }
     return (
 
-        <div className="d-grid gap-1" >
+        <div className="d-grid gap-1" style={{ position: "sticky", top: 0, }}>
             <Button onClick={handleGoogleSignIn} variant="primary" >
                 <BsGoogle></BsGoogle> <strong>LogIn With Google</strong>
             </Button>
