@@ -4,10 +4,12 @@ import Form from 'react-bootstrap/Form';
 import { authContext } from '../../../../contexts/AuthProvider/AuthProvider';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
+import useTitle from '../../../../UseHooks/useTitle';
 
 const Register = () => {
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
+    useTitle('register')
 
     const { createUser, updateUserProfile, verifyEmail } = useContext(authContext);
     const handleSubmit = event => {
